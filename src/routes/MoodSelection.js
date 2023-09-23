@@ -17,37 +17,37 @@ function MoodSelection() {
           <Row className='mb-md-4'>
             <Col className='mb-4' xs={6} md={3}>
               <Mood cname="mood-normal" id="commuters-calm" />
-              <p className='text-light custom-heading-font'>COMMUTER'S CALM</p>
+              <p className='text-light custom-heading-font text-center'>COMMUTER'S CALM</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="study-motivation"/>
-            <p className='text-light custom-heading-font'>STUDY MOTIVATION</p>
+            <p className='text-light custom-heading-font text-center'>STUDY MOTIVATION</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="party-vibes"/>
-            <p className='text-light custom-heading-font'>PARTY VIBES</p>
+            <p className='text-light custom-heading-font text-center'>PARTY VIBES</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="workout-boost"/>
-            <p className='text-light custom-heading-font'>WORKOUT BOOST</p>
+            <p className='text-light custom-heading-font text-center'>WORKOUT BOOST</p>
             </Col>
           </Row>
           <Row>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="mental-uplift"/>
-            <p className='text-light custom-heading-font'>WORKOUT BOOST</p>
+            <p className='text-light custom-heading-font text-center'>WORKOUT BOOST</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="romantic-moments"/>
-            <p className='text-light custom-heading-font'>ROMANTIC MOMENTS</p>
+            <p className='text-light custom-heading-font text-center'>ROMANTIC MOMENTS</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="heartbreak-healing"/>
-            <p className='text-light custom-heading-font'>HEARTBREAK HEALING</p>
+            <p className='text-light custom-heading-font text-center'>HEARTBREAK HEALING</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
             <Mood cname="mood-normal" id="mindfulness-relaxation"/>
-            <p className='text-light custom-heading-font'>MINDFULNESS AND RELAXATION</p>
+            <p className='text-light custom-heading-font text-center'>MINDFULNESS AND RELAXATION</p>
             </Col>
           </Row>
         </Container>

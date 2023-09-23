@@ -2,12 +2,13 @@ import Navbar from '../Components/Navbar'
 import Mood from '../Components/Mood'
 import Stack from 'react-bootstrap/Stack';
 import SpotifyBtn from '../Components/SpotifyBtn';
+import '../custom.scss';
 
 function Login() {
   return (
-    <>
+    <div className='h-100 w-100'>
       <Navbar />
-      <Stack gap={3} className='d-flex justify-content-center align-items-center mb-4 w-100 h-100'>
+      <Stack gap={3} className='d-flex justify-content-center align-items-center mt-3 w-100 h-100'>
         <div> 
         <p className='text-light text-center'>
           Never experience a boring commute again with
@@ -25,7 +26,7 @@ function Login() {
         <SpotifyBtn/>
       </Stack>
 
-    </>
+    </div>
   );
 
 }

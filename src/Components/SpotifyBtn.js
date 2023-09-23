@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 function SpotifyBtn (){
   return (
-    <Container>
+    <Container className='d-flex justify-content-center'>
         <Row>
           <Col>
             <Button size="md" className='px-4 text-light'>
