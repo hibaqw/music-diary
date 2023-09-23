@@ -1,0 +1,100 @@
+
+.mood-active, .mood-normal{
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+}
+.mood-active {
+  width: 173px;
+  height: 160px;
+}
+
+.mood-normal {
+  width: 80px;
+  height: 76px;
+}
+#commuters-calm {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(238, 245, 255, 0.63) 0%, rgba(70, 211, 221, 0.6975) 55.73%, rgba(9, 152, 162, 0.71) 100%);
+}
+#commuters-calm span {
+  box-shadow: 0px 0px 69.5693px 5px #55A0E2, 0px 0px 39.7539px #55A0E2, 0px 0px 23.1898px #55A0E2, 0px 0px 11.5949px #55A0E2, 0px 0px 3.31283px #55A0E2, 0px 0px 1.65641px #55A0E2;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px rgba(85, 160, 226, 0.61);
+  -moz-box-shadow: 0px 0px 69.5693px 5px rgba(85, 160, 226, 0.61);
+}
+
+#party-vibes {
+  background: radial-gradient(50% 50% at 50% 50%, #F83A2D 0%, rgba(240, 155, 56, 0.76) 100%);
+}
+#party-vibes span {
+  box-shadow: 0px 0px 16.5626px #F59E9E, 0px 0px 9.46434px #F59E9E, 0px 0px 5.52087px #F59E9E, 0px 0px 2.76043px #F59E9E, 0px 0px 0.788695px #F59E9E, 0px 0px 0.394348px #F59E9E;
+}
+
+#study-motivation{
+  background: radial-gradient(50% 50% at 50% 50%, rgba(101, 176, 247, 0.54) 0%, #FAAC9B 46.35%, #E7BDA1 60.42%, #B2EBB3 100%);
+}
+
+#study-motivation span {
+  box-shadow: 0px 0px 14.1669px #B6F6C3, 0px 0px 8.09536px #B6F6C3, 0px 0px 4.72229px #B6F6C3, 0px 0px 2.36115px #B6F6C3, 0px 0px 0.674613px #B6F6C3, 0px 0px 0.337307px #B6F6C3;
+}
+
+#workout-boost {
+background: radial-gradient(50% 50% at 50% 50%, #68FFA4 0%, rgba(2, 173, 163, 0.76) 100%);
+}
+
+#workout-boost span{
+  box-shadow: 0px 0px 20.682px #34D5CB, 0px 0px 11.8183px #34D5CB, 0px 0px 6.89399px #34D5CB, 0px 0px 3.44699px #34D5CB, 0px 0px 0.984855px #34D5CB, 0px 0px 0.492428px #34D5CB;
+}
+
+#mental-uplift {
+background: radial-gradient(50% 50% at 50% 50%, #FCFDB9 0%, #FBCB83 27.08%, #F8CD82 47.4%, rgba(252, 255, 178, 0.76) 100%);
+}
+
+#mental-uplift span {
+  box-shadow: 0px 0px 20.9377px #FBBE79, 0px 0px 11.9644px #FBBE79, 0px 0px 6.97922px #FBBE79, 0px 0px 3.48961px #FBBE79, 0px 0px 0.997031px #FBBE79, 0px 0px 0.498516px #FBBE79;
+}
+
+#romantic-moments {
+background: radial-gradient(50% 50% at 50% 50%, #FA9FBA 8.33%, rgba(255, 60, 141, 0.946236) 64.06%, rgba(255, 11, 113, 0.946236) 87.5%);
+}
+
+#romantic-moments span {
+  box-shadow: 0px 0px 21.6914px #E63389, 0px 0px 12.3951px #E63389, 0px 0px 7.23048px #E63389, 0px 0px 3.61524px #E63389, 0px 0px 1.03293px #E63389, 0px 0px 0.516463px #E63389;
+}
+
+#heartbreak-healing {
+background: radial-gradient(50% 50% at 50% 50%, #F95A8A 28.12%, rgba(243, 131, 178, 0.8) 60.94%, rgba(70, 99, 252, 0.79) 87.5%);
+}
+#heartbreak-healing span {
+  box-shadow: 0px 0px 19.9324px #5F55EC, 0px 0px 11.3899px #5F55EC, 0px 0px 6.64412px #5F55EC, 0px 0px 3.32206px #5F55EC, 0px 0px 0.94916px #5F55EC, 0px 0px 0.47458px #5F55EC;
+}
+
+#mindfulness-relaxation {
+background: radial-gradient(50% 50% at 50% 50%, rgba(239, 140, 140, 0.79) 2.08%, rgba(255, 153, 153, 0.79) 25.52%, rgba(255, 214, 153, 0.79) 75%, rgba(224, 173, 248, 0.79) 92.71%);
+
+}
+
+#mindfulness-relaxation span {
+  box-shadow: 0px 0px 21.1313px #D79DF6, 0px 0px 12.075px #D79DF6, 0px 0px 7.04378px #D79DF6, 0px 0px 3.52189px #D79DF6, 0px 0px 1.00625px #D79DF6, 0px 0px 0.503127px #D79DF6;
+}
+
+
+.mood-normal span, .mood-active span{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transform: scale(1);
+  animation: pulseAnimate 2s ease-in-out infinite alternate;
+}
+
+
+
+@keyframes pulseAnimate {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}

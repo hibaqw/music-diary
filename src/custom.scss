@@ -1,0 +1,25 @@
+/* The following line can be included in a src/App.scss */
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/mixins';
+
+
+$primary: #1DB954;
+$theme-colors: map-merge($theme-colors, (
+  "primary": $primary
+));
+$body-bg: #041C32;
+$spacers: (
+  0: 0,
+  1: ($spacer * .25),
+  2: ($spacer * .5),
+  3: $spacer,
+  4: ($spacer * 7),
+  5: ($spacer * 10),
+  6: ($spacer * 20),
+);
+// $headings-font-family: "Monserrat", sans-serif;
+$font-family-sans-serif: "Poppins", sans-serif;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
