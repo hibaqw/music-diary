@@ -4,8 +4,21 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Mood from '../Components/Mood';
+import { useContext } from 'react';
+import { MoodContext } from '../Providers/MoodProvider';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function MoodSelection() {
+  const {selectMood} = useContext(MoodContext);
+  const navigate = useNavigate();
+  function handleClick (event, userMood){
+    event.preventDefault();
+    selectMood(userMood);
+    navigate("/mood-selected");
+
+  }
   return (
     <>
       <Navbar />
@@ -16,37 +29,37 @@ function MoodSelection() {
         <Container className='w-100 h-100'>
           <Row className='mb-md-4'>
             <Col className='mb-4' xs={6} md={3}>
-              <Mood cname="mood-normal" id="commuters-calm" />
+              <Mood cname="mood-normal" id="commuters-calm" inactive={false} onMoodClick={(event) => {handleClick(event,"commuters-calm")}}/>
               <p className='text-light custom-heading-font text-center'>COMMUTER'S CALM</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="study-motivation"/>
+            <Mood cname="mood-normal" id="study-motivation" inactive={false} onMoodClick={(event) => {handleClick(event,"study-motivation")}}/>
             <p className='text-light custom-heading-font text-center'>STUDY MOTIVATION</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="party-vibes"/>
+            <Mood cname="mood-normal" id="party-vibes" inactive={false} onMoodClick={(event) => {handleClick(event,"party-vibes")}}/>
             <p className='text-light custom-heading-font text-center'>PARTY VIBES</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="workout-boost"/>
+            <Mood cname="mood-normal" id="workout-boost" inactive={false} onMoodClick={(event) => {handleClick(event,"workout-boost")}}/>
             <p className='text-light custom-heading-font text-center'>WORKOUT BOOST</p>
             </Col>
           </Row>
           <Row>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="mental-uplift"/>
-            <p className='text-light custom-heading-font text-center'>WORKOUT BOOST</p>
+            <Mood cname="mood-normal" id="mental-uplift" inactive={false} onMoodClick={(event) => {handleClick(event,"mental-uplift")}}/>
+            <p className='text-light custom-heading-font text-center'>MENTAL UPLIFT</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="romantic-moments"/>
+            <Mood cname="mood-normal" id="romantic-moments" inactive={false} onMoodClick={(event) => {handleClick(event,"romantic-moments")}}/>
             <p className='text-light custom-heading-font text-center'>ROMANTIC MOMENTS</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="heartbreak-healing"/>
+            <Mood cname="mood-normal" id="heartbreak-healing" inactive={false} onMoodClick={(event) => {handleClick(event,"heartbreak-healing")}}/>
             <p className='text-light custom-heading-font text-center'>HEARTBREAK HEALING</p>
             </Col>
             <Col className='mb-4' xs={6} md={3}>
-            <Mood cname="mood-normal" id="mindfulness-relaxation"/>
+            <Mood cname="mood-normal" id="mindfulness-relaxation" inactive={false} onMoodClick={(event) => {handleClick(event,"mindfulness-relaxation")}}/>
             <p className='text-light custom-heading-font text-center'>MINDFULNESS AND RELAXATION</p>
             </Col>
           </Row>

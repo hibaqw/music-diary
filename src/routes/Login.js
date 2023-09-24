@@ -15,7 +15,7 @@ function Login() {
         </p>
         </div>
         <div className='h-25'>
-        <Mood cname="mood-active" id="commuters-calm" />
+        <Mood cname="mood-active" id="commuters-calm" inactive={true} onMoodClick={(e) => e.preventDefault() }/>
         </div>
         <div className='custom-heading-font text-light fs-3 text-center'>
           MUSIC DIARY

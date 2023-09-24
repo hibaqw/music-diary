@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import Login from './routes/Login';
 import MoodSelection from './routes/MoodSelection';
+import MoodSelected from './routes/MoodSelected';
+import MoodProvider from './Providers/MoodProvider';
 
 const router = createBrowserRouter([
   {
@@ -22,12 +24,18 @@ const router = createBrowserRouter([
     path: "mood-selection",
     element: <MoodSelection/>,
   },
+  {
+    path: "mood-selected",
+    element: <MoodSelected/>,
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <MoodProvider>
    <RouterProvider router={router} />
+   </MoodProvider>
   </React.StrictMode>
 );
 
