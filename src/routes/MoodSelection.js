@@ -4,21 +4,47 @@ import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import Mood from '../Components/Mood';
-import { useContext } from 'react';
-import { MoodContext } from '../Providers/MoodProvider';
+import React, { useContext,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MoodContext } from '../Providers/MoodProvider';
+import { AuthContext } from '../Providers/AuthProvider';
+import { SpotifyTokenContext } from '../Providers/SpotifyTokenProvider';
 
 
-
+const getTokenFromUrl = () => {
+  return window.location.hash
+  .substring(1)
+  .split('&')
+  .reduce((initial,item) => {
+  let parts = item.split("=");
+  initial[parts[0]]= decodeURIComponent(parts[1]);
+  return initial;
+  }, {});
+};
 function MoodSelection() {
   const {selectMood} = useContext(MoodContext);
   const navigate = useNavigate();
+  const { setLoginStatus} = useContext(AuthContext);
+  const {addSpotifyToken} = useContext(SpotifyTokenContext);
+  useEffect(() => {
+    console.log("This is what we derived from the URL: ", getTokenFromUrl());
+    const spotifyToken = getTokenFromUrl().access_token
+    window.location.hash = "";
+    console.log("this is our spotify token");
+
+    if (spotifyToken) {
+      addSpotifyToken(spotifyToken);
+      console.log(spotifyToken);
+      setLoginStatus();
+    }
+  })
   function handleClick (event, userMood){
     event.preventDefault();
     selectMood(userMood);
     navigate("/mood-selected");
 
   }
+  
   return (
     <>
       <Navbar />

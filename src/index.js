@@ -12,30 +12,41 @@ import Login from './routes/Login';
 import MoodSelection from './routes/MoodSelection';
 import MoodSelected from './routes/MoodSelected';
 import MoodProvider from './Providers/MoodProvider';
-
+import AuthProvider from './Providers/AuthProvider';
+import SpotifyTokenProvider from './Providers/SpotifyTokenProvider';
+import PrivateRoute from './routes/PrivateRoute';
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-       <Login/>
+        <Login />
+      
     ),
   },
   {
     path: "mood-selection",
-    element: <MoodSelection/>,
+    element: (
+   
+      <MoodSelection />),
+
+
   },
   {
     path: "mood-selected",
-    element: <MoodSelected/>,
+    element: (<MoodSelected />),
   },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MoodProvider>
-   <RouterProvider router={router} />
-   </MoodProvider>
+    <SpotifyTokenProvider>
+      <AuthProvider>
+        <MoodProvider>
+          <RouterProvider router={router} />
+        </MoodProvider>
+      </AuthProvider>
+    </SpotifyTokenProvider>
   </React.StrictMode>
 );
 

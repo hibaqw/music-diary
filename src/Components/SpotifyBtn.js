@@ -2,10 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {useNavigate} from "react-router-dom"
 
 function SpotifyBtn (){
-  const navigate = useNavigate();
   return (
     <Container className='d-flex justify-content-center'>
         <Row>
