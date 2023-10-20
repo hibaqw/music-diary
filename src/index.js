@@ -39,7 +39,6 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <SpotifyTokenProvider>
       <AuthProvider>
         <MoodProvider>
@@ -47,7 +46,6 @@ root.render(
         </MoodProvider>
       </AuthProvider>
     </SpotifyTokenProvider>
-  </React.StrictMode>
 );
 
 

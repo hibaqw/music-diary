@@ -2,13 +2,13 @@
 import SpotifyWebApi from "spotify-web-api-js"
 const spotifyApi = new SpotifyWebApi();
 const commutersCalmGenres = ["chill","road-trip", "trance", "ambient"];
-const studyMotivationGenres = ["chill", "study", "rainy-day", "ambient", "classical"];
+const studyMotivationGenres = ["chill", "study", "ambient", "classical"];
 const partyVibesGenres = ["dance","house", "hip-hop","party", "reggae" ];
 const workoutBoostGenres = ["work-out"];
 const mentalUpliftGenres = [ "happy", "comedy","disney","holidays", "power-pop"];
-const romanticMomentsGenres = ["r-n-b","romance", "latin"];
-const heartbreakHealingGenres = ["sad", "romance", "guitar"];
-const mindfulRelaxationGenres = ["chill", "ambient", "new-age", "sleep"];
+const romanticMomentsGenres = ["romance", "latin"];
+const heartbreakHealingGenres = ["sad", "romance", "guitar","rainy-day"];
+const mindfulRelaxationGenres = ["ambient", "new-age", "sleep"];
 const initSpotifyApi = () => {
   const spotifyToken = JSON.parse(localStorage.getItem('spotifyToken'));
   spotifyApi.setAccessToken(spotifyToken);
@@ -46,17 +46,25 @@ const getRecommendations = () => {
       seedGenres += mindfulRelaxationGenres.toString()
       break;
   }
-  console.log(seedGenres);
   const options = {limit: 15, seed_genres: seedGenres}
-  spotifyApi.getRecommendations(options).then((response) => {
-      console.log(response);
-   });
-
+  spotifyApi.getRecommendations(options).then((response)=> {
+    localStorage.setItem('recObject', JSON.stringify(response));
+  });
   }
-  else {
-    console.log("error");
-  }
-  
-
 }
-export {getRecommendations};
+
+const processRecommendations = () => {
+  const recObject = getRecommendations();
+  console.log(recObject);
+  const recommendationObj = JSON.parse(localStorage.getItem('recObject'));
+  let trackArray = [];
+  recommendationObj.tracks.map((obj) => {
+ 
+    trackArray.push(obj["uri"]);
+  })
+  localStorage.removeItem("recObject");
+  localStorage.setItem('trackArray', JSON.stringify(trackArray));
+  console.log(trackArray);
+  return trackArray;
+}
+export {processRecommendations};

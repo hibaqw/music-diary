@@ -2,27 +2,20 @@ import Navbar from '../Components/Navbar'
 import Mood from '../Components/Mood'
 import Stack from 'react-bootstrap/Stack';
 import '../custom.scss';
-import { useEffect} from 'react';
-import {getRecommendations} from '../api/spotify-api-calls';
-// import { MoodContext } from '../Providers/MoodProvider';
-// import SpotifyWebApi from "spotify-web-api-js"
-// const spotifyApi = new SpotifyWebApi();
+import Player from '../Components/Player';
+import { useEffect, useState } from 'react';
+import { processRecommendations } from '../api/spotify-api-calls';
+
 function MoodSelected() {
-  useEffect(() => {
-    // spotifyApi.setAccessToken(spotifyToken);
-    // spotifyApi.getMe().then((user) => {
-    //   console.log(user)
-    // });
-    // spotifyApi.getAvailableGenreSeeds().then((response) => {
-    //   console.log(response);
-    // });
-    getRecommendations();
-
-
-  });
-
-  // const {mood} = useContext(MoodContext);
   const mood = JSON.parse(localStorage.getItem('mood'));
+  const spotifyToken = JSON.parse(localStorage.getItem('spotifyToken'));
+  const [trackUris , setTrackUris] = useState([]);
+  let trackArray = [];
+  useEffect(() => {
+    // setRecObj(processRecommendations());
+    processRecommendations();
+    setTrackUris(JSON.parse(localStorage.getItem('trackArray')));
+  }, []);
   return (
     <div className='h-100 w-100'>
       <Navbar />
@@ -31,7 +24,7 @@ function MoodSelected() {
           <Mood cname="mood-active" id={mood} inactive={true} onMoodClick={(e) => e.preventDefault()} />
         </div>
       </Stack>
-
+      <Player accessToken={spotifyToken} trackUri={trackUris}/>
     </div>
   );
 
