@@ -50,7 +50,7 @@ function MoodSelection() {
   return (
     <>
       <Navbar />
-      <Stack gap={3} className='mt-4 h-100'>
+      <Stack gap={5} className='mt-4 h-100'>
         <p className='text-light text-center display-6 mb-4'>
           How are you feeling today?
         </p>

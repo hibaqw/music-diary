@@ -40,14 +40,14 @@ function Login() {
     <>
     <div className='h-100 w-100'>
       <Navbar />
-      <Stack gap={3} className='d-flex justify-content-center align-items-center mt-3 w-100 h-100'>
+      <Stack gap={3} className='d-flex justify-content-center align-items-center w-100 h-100'>
         <div>
           <p className='text-light text-center'>
             Never experience a boring commute again with
           </p>
         </div>
         <div className='h-25'>
-          <Mood cname="mood-active" id="commuters-calm" inactive={true} onMoodClick={(e) => e.preventDefault()} />
+          <Mood cname="mood-active" id="commuters-calm" inactive={true} onMoodClick={(e) => e.preventDefault()}/>
         </div>
         <div className='custom-heading-font text-light fs-3 text-center'>
           MUSIC DIARY

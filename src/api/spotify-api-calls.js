@@ -58,7 +58,7 @@ const processRecommendations = () => {
   console.log(recObject);
   const recommendationObj = JSON.parse(localStorage.getItem('recObject'));
   let trackArray = [];
-  recommendationObj.tracks.map((obj) => {
+  recommendationObj["tracks"].map((obj) => {
  
     trackArray.push(obj["uri"]);
   })

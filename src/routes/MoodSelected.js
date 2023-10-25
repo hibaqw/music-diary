@@ -5,6 +5,7 @@ import '../custom.scss';
 import Player from '../Components/Player';
 import { useEffect, useState } from 'react';
 import { processRecommendations } from '../api/spotify-api-calls';
+import axios from "axios";
 
 function MoodSelected() {
   const mood = JSON.parse(localStorage.getItem('mood'));
@@ -12,7 +13,6 @@ function MoodSelected() {
   const [trackUris , setTrackUris] = useState([]);
   let trackArray = [];
   useEffect(() => {
-    // setRecObj(processRecommendations());
     processRecommendations();
     setTrackUris(JSON.parse(localStorage.getItem('trackArray')));
   }, []);

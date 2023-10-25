@@ -28,6 +28,8 @@
 }
 #party-vibes span {
   box-shadow: 0px 0px 16.5626px #F59E9E, 0px 0px 9.46434px #F59E9E, 0px 0px 5.52087px #F59E9E, 0px 0px 2.76043px #F59E9E, 0px 0px 0.788695px #F59E9E, 0px 0px 0.394348px #F59E9E;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px #F59E9E ;
+  -moz-box-shadow: 0px 0px 69.5693px 5px #F59E9E;
 }
 
 #study-motivation{
@@ -36,6 +38,8 @@
 
 #study-motivation span {
   box-shadow: 0px 0px 14.1669px #B6F6C3, 0px 0px 8.09536px #B6F6C3, 0px 0px 4.72229px #B6F6C3, 0px 0px 2.36115px #B6F6C3, 0px 0px 0.674613px #B6F6C3, 0px 0px 0.337307px #B6F6C3;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px  #B6F6C3;
+  -moz-box-shadow: 0px 0px 69.5693px 5px #B6F6C3;
 }
 
 #workout-boost {
@@ -44,6 +48,8 @@ background: radial-gradient(50% 50% at 50% 50%, #68FFA4 0%, rgba(2, 173, 163, 0.
 
 #workout-boost span{
   box-shadow: 0px 0px 20.682px #34D5CB, 0px 0px 11.8183px #34D5CB, 0px 0px 6.89399px #34D5CB, 0px 0px 3.44699px #34D5CB, 0px 0px 0.984855px #34D5CB, 0px 0px 0.492428px #34D5CB;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px  #34D5CB;
+  -moz-box-shadow: 0px 0px 69.5693px 5px #34D5CB;
 }
 
 #mental-uplift {
@@ -52,6 +58,8 @@ background: radial-gradient(50% 50% at 50% 50%, #FCFDB9 0%, #FBCB83 27.08%, #F8C
 
 #mental-uplift span {
   box-shadow: 0px 0px 20.9377px #FBBE79, 0px 0px 11.9644px #FBBE79, 0px 0px 6.97922px #FBBE79, 0px 0px 3.48961px #FBBE79, 0px 0px 0.997031px #FBBE79, 0px 0px 0.498516px #FBBE79;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px  #FBBE79;
+  -moz-box-shadow: 0px 0px 69.5693px 5px  #FBBE79;
 }
 
 #romantic-moments {
@@ -60,6 +68,8 @@ background: radial-gradient(50% 50% at 50% 50%, #FA9FBA 8.33%, rgba(255, 60, 141
 
 #romantic-moments span {
   box-shadow: 0px 0px 21.6914px #E63389, 0px 0px 12.3951px #E63389, 0px 0px 7.23048px #E63389, 0px 0px 3.61524px #E63389, 0px 0px 1.03293px #E63389, 0px 0px 0.516463px #E63389;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px  #E63389;
+  -moz-box-shadow: 0px 0px 69.5693px 5px   #E63389;
 }
 
 #heartbreak-healing {
@@ -67,6 +77,8 @@ background: radial-gradient(50% 50% at 50% 50%, #F95A8A 28.12%, rgba(243, 131, 1
 }
 #heartbreak-healing span {
   box-shadow: 0px 0px 19.9324px #5F55EC, 0px 0px 11.3899px #5F55EC, 0px 0px 6.64412px #5F55EC, 0px 0px 3.32206px #5F55EC, 0px 0px 0.94916px #5F55EC, 0px 0px 0.47458px #5F55EC;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px  #5F55EC;
+  -moz-box-shadow: 0px 0px 69.5693px 5px   #5F55EC;
 }
 
 #mindfulness-relaxation {
@@ -76,6 +88,8 @@ background: radial-gradient(50% 50% at 50% 50%, rgba(239, 140, 140, 0.79) 2.08%,
 
 #mindfulness-relaxation span {
   box-shadow: 0px 0px 21.1313px #D79DF6, 0px 0px 12.075px #D79DF6, 0px 0px 7.04378px #D79DF6, 0px 0px 3.52189px #D79DF6, 0px 0px 1.00625px #D79DF6, 0px 0px 0.503127px #D79DF6;
+  -webkit-box-shadow: 0px 0px 69.5693px 5px #D79DF6;
+  -moz-box-shadow: 0px 0px 69.5693px 5px #D79DF6;
 }
 
 
@@ -97,5 +111,12 @@ background: radial-gradient(50% 50% at 50% 50%, rgba(239, 140, 140, 0.79) 2.08%,
 
   to {
     opacity: 0.4;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .mood-active {
+    width: 18%;
+    height: 30%;
   }
 }
