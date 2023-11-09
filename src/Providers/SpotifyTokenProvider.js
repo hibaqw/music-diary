@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect} from 'react';
+import { createContext, useState} from 'react';
+const store = require("store2");
 
 // Create a Context
 export const SpotifyTokenContext = createContext();
@@ -11,12 +12,17 @@ export default function SpotifyTokenProvider(props) {
 
   // Function to set SpotifyToken
   const addSpotifyToken = function(token) {
-    localStorage.setItem('spotifyToken', JSON.stringify(token));
-    setSpotifyToken(token);
-
+    // set token in store2
+    store.set('spotifyToken', token);
+    if (store('spotifyToken')){
+      setSpotifyToken(token);
+    } else {
+      console.log('could not set token.')
+    }
   };
 
   const getSpotifyToken = function(){
+    const spotifyToken = store('spotifyToken');
     return spotifyToken? spotifyToken : "";
 
   }

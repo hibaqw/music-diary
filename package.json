@@ -16,6 +16,7 @@
     "react-spotify-web-playback": "^0.14.1",
     "sass": "^1.68.0",
     "spotify-web-api-js": "^1.5.2",
+    "store2": "^2.14.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -41,5 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://localhost:8888"
 }

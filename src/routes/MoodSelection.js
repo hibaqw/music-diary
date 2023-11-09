@@ -8,6 +8,7 @@ import React, { useContext,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoodContext } from '../Providers/MoodProvider';
 import {getRecommendations} from '../api/spotify-api-calls';
+import { SpotifyTokenContext } from '../Providers/SpotifyTokenProvider';
 // import { AuthContext } from '../Providers/AuthProvider';
 // import { SpotifyTokenContext } from '../Providers/SpotifyTokenProvider';
 
@@ -25,6 +26,7 @@ import {getRecommendations} from '../api/spotify-api-calls';
 function MoodSelection() {
   const {selectMood} = useContext(MoodContext);
   const navigate = useNavigate();
+  const { getSpotifyToken } = useContext(SpotifyTokenContext);
   // const { setLoginStatus} = useContext(AuthContext);
   // const {addSpotifyToken} = useContext(SpotifyTokenContext);
   // useEffect(() => {
@@ -42,7 +44,8 @@ function MoodSelection() {
   function handleClick (event, userMood){
     event.preventDefault();
     selectMood(userMood);
-    navigate("/mood-selected");
+    console.log(getSpotifyToken())
+    // navigate("/mood-selected");
 
 
   }
