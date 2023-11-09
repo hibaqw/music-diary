@@ -68,3 +68,10 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Product
+
+!["Screenshot of Welcome Screen"](https://github.com/hibaqw/music-diary/blob/c40f84ae45d7d9f1dd972da000dc09856c529e7c/docs/WelcomePage.png?raw=true)
+!["Screenshot of homepage after appointment is booked"](https://github.com/hibaqw/music-diary/blob/c40f84ae45d7d9f1dd972da000dc09856c529e7c/docs/MoodSelectionPage.png?raw=true)
+!["Screenshot of homepage after appointment is booked"](https://github.com/hibaqw/music-diary/blob/c40f84ae45d7d9f1dd972da000dc09856c529e7c/docs/MoodSelectedPage.png?raw=true)
+
