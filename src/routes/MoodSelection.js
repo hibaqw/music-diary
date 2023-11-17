@@ -8,47 +8,37 @@ import React, { useContext,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MoodContext } from '../Providers/MoodProvider';
 import {getRecommendations} from '../api/spotify-api-calls';
+import { AuthContext } from '../Providers/AuthProvider';
 import { SpotifyTokenContext } from '../Providers/SpotifyTokenProvider';
-// import { AuthContext } from '../Providers/AuthProvider';
-// import { SpotifyTokenContext } from '../Providers/SpotifyTokenProvider';
+import {verifyReturingUser } from '../api/db-api-calls';
 
-
-// const getTokenFromUrl = () => {
-//   return window.location.hash
-//   .substring(1)
-//   .split('&')
-//   .reduce((initial,item) => {
-//   let parts = item.split("=");
-//   initial[parts[0]]= decodeURIComponent(parts[1]);
-//   return initial;
-//   }, {});
-// };
 function MoodSelection() {
   const {selectMood} = useContext(MoodContext);
   const navigate = useNavigate();
-  const { getSpotifyToken } = useContext(SpotifyTokenContext);
-  // const { setLoginStatus} = useContext(AuthContext);
-  // const {addSpotifyToken} = useContext(SpotifyTokenContext);
-  // useEffect(() => {
-  //   console.log("This is what we derived from the URL: ", getTokenFromUrl());
-  //   const spotifyToken = getTokenFromUrl().access_token
-  //   window.location.hash = "";
-  //   console.log("this is our spotify token");
-
-  //   if (spotifyToken) {
-  //     addSpotifyToken(spotifyToken);
-  //     console.log(spotifyToken);
-  //     setLoginStatus();
-  //   }
-  // })
+  const {addSpotifyToken, addRefreshToken, getRefreshToken } = useContext(SpotifyTokenContext);
+  const { updateUserInfo,getUserInfo} = useContext(AuthContext);
   function handleClick (event, userMood){
     event.preventDefault();
+    console.log(getUserInfo());
     selectMood(userMood);
-    console.log(getSpotifyToken())
-    // navigate("/mood-selected");
+    navigate("/mood-selected");
 
 
   }
+  useEffect(() => {
+    window.location.hash = "";
+    verifyReturingUser()
+    .then(result => {
+      const spotifyToken = result[0].spotify_token;
+      const refreshToken = result[0].refresh_token;
+      const uid = result[0].uid;
+      const username = result[0].username;
+      const email = result[0].email;
+      addSpotifyToken(spotifyToken);
+      addRefreshToken(refreshToken);
+      updateUserInfo(uid, username, email);
+    }).catch(err => console.log(err))
+  },[]);
   
   return (
     <>

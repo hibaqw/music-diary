@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect} from 'react';
+import { createContext, useState} from 'react';
+const store = require("store2");
 
 // Create a Context
 export const AuthContext = createContext();
@@ -7,27 +8,27 @@ export const AuthContext = createContext();
 export default function AuthProvider(props) {
 
   // Here is our Shared State 
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [userInfo, setUserInfo] = useState({})
 
   // Function to change the mood state
-  const setLoginStatus = function() {
-    setLoggedIn(true);
-    localStorage.setItem('loggedIn', JSON.stringify("true"));
-
+  const updateUserInfo = function(uid,name,email) {
+    const userInfoObj= {uid,name,email}
+    store.set('userInfo', userInfoObj);
+    setUserInfo(userInfoObj);
   };
 
-  const getLoginStatus = function(){
-    const loginStatus = JSON.parse(localStorage.getItem('loggedIn'));
-    return loginStatus? loginStatus : "";
+  const getUserInfo = function(){
+    const userInfoObj = store('userInfo')
+    return userInfoObj? userInfoObj : "";
 
   }
 
-  const loginData = {setLoginStatus, getLoginStatus, loggedIn};
+  const userInfoData = {updateUserInfo, getUserInfo};
 
   // We can now use this as a component to wrap anything 
   // that needs our state
   return (
-    <AuthContext.Provider value={loginData}>
+    <AuthContext.Provider value={userInfoData}>
       {props.children}
     </AuthContext.Provider>
   );

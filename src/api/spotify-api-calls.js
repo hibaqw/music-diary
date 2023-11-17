@@ -46,10 +46,10 @@ const getRecommendations = () => {
       seedGenres += mindfulRelaxationGenres.toString()
       break;
   }
-  const options = {limit: 15, seed_genres: seedGenres}
-  spotifyApi.getRecommendations(options).then((response)=> {
-    localStorage.setItem('recObject', JSON.stringify(response));
-  });
+  // const options = {limit: 15, seed_genres: seedGenres}
+  // spotifyApi.getRecommendations(options).then((response)=> {
+  //   localStorage.setItem('recObject', JSON.stringify(response));
+  // });
   }
 }
 

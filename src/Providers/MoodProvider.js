@@ -1,4 +1,5 @@
-import { createContext, useState, useEffect} from 'react';
+import { createContext, useState} from 'react';
+const store = require("store2");
 
 // Create a Context
 export const MoodContext = createContext();
@@ -13,18 +14,17 @@ export default function MoodProvider(props) {
   // Function to change the mood state
   const selectMood = function(newMood) {
     setMood(newMood);
-    localStorage.setItem('mood', JSON.stringify(newMood));
-
+    store.set('mood', newMood);
   };
 
   const retrieveMood = function(){
-    const storedMood = JSON.parse(localStorage.getItem('mood'));
+    const storedMood = store('mood')
     return storedMood? storedMood : "";
 
   }
 
 
-  const moodData = {selectMood, retrieveMood, mood};
+  const moodData = {selectMood, retrieveMood};
 
   // We can now use this as a component to wrap anything 
   // that needs our state

@@ -13,7 +13,7 @@ function MoodSelected() {
   const [trackUris , setTrackUris] = useState([]);
   let trackArray = [];
   useEffect(() => {
-    processRecommendations();
+    // processRecommendations();
     setTrackUris(JSON.parse(localStorage.getItem('trackArray')));
   }, []);
   return (
